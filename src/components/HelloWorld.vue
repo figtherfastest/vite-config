@@ -19,14 +19,14 @@
 <script setup>
 import b from './b.js?worker'
 
-import { ref } from "vue"
+import { ref } from 'vue'
 
 function getPostMAS() {
-  const worker = new b();
+  const worker = new b()
   worker.onmessage = function (val) {
-    console.log(val);
+    console.log(val)
   }
-};
+}
 
 defineProps({
   msg: String,
