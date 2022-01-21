@@ -9,6 +9,7 @@ import b from './b.js?worker'
 import { ref } from 'vue'
 
 function getPostMAS() {
+	console.log(__TEST__)
   const worker = new b()
   worker.onmessage = function (val) {
     console.log(val)
