@@ -2,7 +2,7 @@
   "name": "vite-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3001",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint "
@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^3.0.1",
+    "@rollup/plugin-image": "^2.1.1",
     "@vitejs/plugin-vue": "^2.0.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-node": "^11.1.0",

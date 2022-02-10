@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import replace from '@rollup/plugin-replace'
 import testPlugin from './plugins/vite-test-plugin'
+import image from '@rollup/plugin-image'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,11 @@ export default defineConfig({
         vue(),
         replace({ __TEST__: '12434' }),
         testPlugin('post'),
-        testPlugin('pre')
+        testPlugin('pre'),
+        {
+            ...image(),
+            enforce: 'pre'
+        }
     ],
     optimizeDeps: {},
     resolve: {
