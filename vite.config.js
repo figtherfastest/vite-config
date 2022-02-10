@@ -1,16 +1,21 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import replace from '@rollup/plugin-replace'
-import testPlugin from './plugins/vite-test-plugin'
+// import testPlugin from './plugins/vite-test-plugin'
 import image from '@rollup/plugin-image'
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         vue(),
-        replace({ __TEST__: '12434' }),
-        testPlugin('post'),
-        testPlugin('pre'),
+        replace({
+            values: {
+                __TEST__: '12434'
+            },
+            preventAssignment: true
+        }),
+        // testPlugin('post'),
+        // testPlugin('pre'),
         {
             ...image(),
             enforce: 'pre'
@@ -20,6 +25,16 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': '/src'
+        }
+    },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData:
+                    '$injectedColor: orange;' +
+                    '$red: red;' +
+                    '$blue: blue;'
+            }
         }
     },
     server: {

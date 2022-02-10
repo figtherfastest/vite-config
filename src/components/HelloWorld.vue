@@ -2,6 +2,7 @@
   <h1>{{ msg }}</h1>
   <div @click="getPostMAS">666666</div>
   <input type='text'>
+	<div class='soso'>66666</div>
 </template>
 <script setup>
 import b from './b.js?worker'
@@ -33,7 +34,10 @@ defineProps({
 const count = ref(0)
 </script>
 <style scoped lang="scss">
-a {
-  color: black;
+//a {
+//  color: black
+//}
+.soso{
+	color: $blue;
 }
 </style>
