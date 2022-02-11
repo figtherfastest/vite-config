@@ -51,12 +51,12 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         assetsDir: 'assets',
-        sourcemap: false,
+        sourcemap: true,
         brotliSize: true,
+        manifest: true,
         rollupOptions: {
-            plugins: {
             // 这块是兼容 rollup 的plugin,也可以放到前面的plugin中
-            }
+            // plugins: {}
         }
     },
     // 这个是vite 独有的钩子
