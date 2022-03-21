@@ -1,8 +1,9 @@
 <template>
   <h1>{{ msg }}</h1>
   <div @click="getPostMAS">666666</div>
-  <input type='text'>
+  <input type='text'/>
 	<div class='soso'>66666</div>
+	<i class="iconfont iconjiantouzuo" />
 </template>
 <script setup>
 import b from './b.js?worker'
@@ -38,6 +39,6 @@ const count = ref(0)
 //  color: black
 //}
 .soso{
-	color: $blue;
+	color: $red;
 }
 </style>
