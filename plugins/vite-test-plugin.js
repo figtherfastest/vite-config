@@ -35,7 +35,7 @@ export default function (enforce) {
 		    return html.replace('<div id="app"></div>', '<div id="app" class="6666"></div>')
 	    },
 	    handleHotUpdate (ctx) {
-            //
+            // 热更新是时候会触发这个选项
             ctx.server.ws.send({
 	            type: 'custom',
                 event: 'test',
